@@ -1,0 +1,40 @@
+type Query {
+  hello(name: String!): String!
+}
+
+type Category {
+  id: ID!
+  name: String!
+  posts: [Post!]!
+}
+
+type Post {
+  id: ID!
+  createdAt: Date!
+  title: String!
+  published: Boolean!
+  author: User!
+  categories: [Category!]!
+}
+
+type Profile {
+  id: ID!
+  bio: String
+  user: User!
+}
+
+type User {
+  createdAt: Date!
+  email: String!
+  firstname: String
+  id: ID!
+  lastname: String
+  posts: [Post!]!
+  profile: [Profile!]!
+  role: Role!
+}
+
+enum Role {
+  USER
+  ADMIN
+}
