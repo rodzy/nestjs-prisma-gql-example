@@ -2,6 +2,15 @@ type Query {
   hello(name: String!): String!
 }
 
+type Auth {
+  accessToken: String!
+  refreshToken: String!
+  user: User!
+}
+
+"Custom suport for scalar Dates"
+scalar Date
+
 type Category {
   id: ID!
   name: String!
